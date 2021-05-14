@@ -46,6 +46,10 @@ export default function Login() {
 				<li>Read access to a user’s player state.</li>
 				<li>Write access to a user’s playback state.</li>
 			</ul>
+			<p>
+				Please make sure your Spotify is currently playing or has recently been
+				playing to be able to populate the app with data.
+			</p>
 			<LoginButton href={loginUrl}>Login with Spotify</LoginButton>
 		</LoginContainer>
 	)
