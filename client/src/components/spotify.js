@@ -1,5 +1,5 @@
 const authEndpoint = "https://accounts.spotify.com/authorize"
-const redirectUri = "http://localhost:3000/"
+const redirectUri = "https://spotify-remote-dy.herokuapp.com/"
 const clientId = "d787e68fe78a418a98496af361bbcb80"
 
 const scopes = [

@@ -6,7 +6,7 @@ export default function useAuth(code) {
 
 	useEffect(() => {
 		axios
-			.post("http://localhost:8000/login", { code })
+			.post("https://spotify-remote-dy.herokuapp.com/login", { code })
 			.then((response) => {
 				window.history.pushState({}, null, "/")
 

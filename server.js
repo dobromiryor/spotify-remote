@@ -1,10 +1,11 @@
 require("dotenv").config()
 const express = require("express")
+const path = require("path")
 const cors = require("cors")
 const spotifyWebApi = require("spotify-web-api-node")
 
 const app = express()
-const port = 8000
+const port = 3000
 
 app.use(cors()) // To handle cross-origin requests
 app.use(express.json()) // To parse JSON bodies
@@ -15,9 +16,12 @@ const credentials = {
 	redirectUri: process.env.REDIRECT_URI,
 }
 
-app.get("/", (req, res) => {
-	console.log("Hello World!")
-})
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, "./client/build")))
+
+// app.get("/", (req, res) => {
+// 	console.log("Hello World!")
+// })
 
 app.post("/login", (req, res) => {
 	//  setup
@@ -41,6 +45,11 @@ app.post("/login", (req, res) => {
 		})
 })
 
-app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`)
+// All remaining requests return the React app, so it can handle routing.
+app.get("*", function (request, response) {
+	response.sendFile(path.resolve(__dirname, "./client/build", "index.html"))
+})
+
+app.listen(process.env.PORT || port, () => {
+	console.log(`App listening`)
 })
