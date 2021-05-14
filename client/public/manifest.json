@@ -1,6 +1,7 @@
 {
+	"name": "spotify-remote",
 	"short_name": "spotify-remote",
-	"name": "Web app that controls Spotify playback",
+	"description": "Web app that controls Spotify playback",
 	"icons": [
 		{
 			"src": "favicon.ico",
