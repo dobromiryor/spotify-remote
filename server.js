@@ -5,7 +5,7 @@ const cors = require("cors")
 const spotifyWebApi = require("spotify-web-api-node")
 
 const app = express()
-const port = 3000
+const port = 8000
 
 app.use(cors()) // To handle cross-origin requests
 app.use(express.json()) // To parse JSON bodies
