@@ -3,12 +3,13 @@ import styled from "styled-components"
 const MediaContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
 
 	gap: 16px;
 
 	@media (min-width: 700px) {
 		flex-direction: row;
+
+		margin: auto 0 32px 0;
 	}
 	@media (min-width: 992px) {
 		gap: 32px;
@@ -25,6 +26,10 @@ const AlbumArt = styled.img`
 		flex-grow: 1;
 		flex-shrink: 1;
 		flex-basis: 0;
+		align-self: initial;
+
+		max-width: ${() => (window.devicePixelRatio > 1 ? "240px" : "480px")};
+		max-height: ${() => (window.devicePixelRatio > 1 ? "240px" : "480px")};
 	}
 `
 

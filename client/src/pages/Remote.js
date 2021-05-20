@@ -42,10 +42,12 @@ const RemoteContainer = styled.div`
 
 const LoadingContainer = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 32px;
 
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 `
 
@@ -151,6 +153,10 @@ export default function Remote({ code }) {
 	) : (
 		<LoadingContainer>
 			<Loading />
+			<p>
+				Please make sure your Spotify is currently playing or has recently been
+				playing to be able to populate the app with data.
+			</p>
 		</LoadingContainer>
 	)
 }
